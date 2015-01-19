@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+if [[ $DEFAULT_CONFIG_FILE ]]; then
+    mv /etc/ganglia/gmetad.conf /etc/ganglia/gmetad.conf.old
+    ln -s $DEFAULT_CONFIG_FILE /etc/ganglia/gmetad.conf
+fi
+
+service apache2 restart
+
+# Start gmetad service on foreground
+gmetad -d 1 -p /var/run/gmetad.pid
