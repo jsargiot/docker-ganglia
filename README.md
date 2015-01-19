@@ -11,5 +11,5 @@ To set a custom gmetad.conf file via the bind mount option:
 
 To set a custom gmetad.conf file via environment variable:
 
-    docker run -e -e DEFAULT_CONFIG_FILE=/mnt/gmetad.conf jsargiot/ganglia-frontend
+    docker run -e DEFAULT_CONFIG_FILE=/mnt/gmetad.conf jsargiot/ganglia-frontend
 
